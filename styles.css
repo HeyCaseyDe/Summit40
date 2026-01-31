@@ -1,0 +1,621 @@
+/* ===== CSS Variables ===== */
+:root {
+  --bg-cream: #F4EDE4;
+  --bg-cream-light: #FAFAF8;
+  --text-charcoal: #3A3A3A;
+  --heading-teal: #2C5F5D;
+  --accent-orange: #D85A3A;
+  --accent-sage: #8B9E7D;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
+  
+  /* Topography pattern */
+  --topo-pattern: url('Topographic-Map-Pattern-7.png');
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--heading-teal);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--heading-teal);
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Section Base ===== */
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #2C5F5D 0%, #3d7a78 50%, #8B9E7D 100%);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 24px;
+}
+
+.logo {
+  width: 280px;
+  max-width: 80vw;
+  margin-bottom: 32px;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--white);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: var(--bg-cream);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dates-badge {
+  display: inline-block;
+  background: var(--accent-orange);
+  color: var(--white);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 15px rgba(216, 90, 58, 0.4);
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--white);
+  color: var(--heading-teal);
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  color: var(--heading-teal);
+}
+
+/* ===== Details Section ===== */
+.details {
+  background: var(--bg-cream-light);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.detail-card {
+  background: var(--white);
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+}
+
+.detail-card.highlight-card {
+  background: linear-gradient(135deg, var(--heading-teal) 0%, #3d7a78 100%);
+  color: var(--white);
+}
+
+.detail-card.highlight-card h3 {
+  color: var(--white);
+}
+
+.detail-card.highlight-card .detail-sub {
+  color: rgba(255,255,255,0.8);
+}
+
+.detail-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.detail-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--heading-teal);
+}
+
+.detail-card p {
+  margin-bottom: 4px;
+}
+
+.detail-sub {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 8px;
+}
+
+/* ===== Property Section ===== */
+.property {
+  background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.property::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--topo-pattern);
+  background-size: 500px 500px;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.property .container {
+  position: relative;
+  z-index: 1;
+}
+
+.property-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
+.property-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.property-link {
+  display: inline-block;
+  background: var(--accent-orange);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.property-link:hover {
+  background: var(--heading-teal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.property .container {
+  text-align: center;
+}
+
+/* ===== Adventures Section ===== */
+.adventures {
+  background: var(--bg-cream-light);
+}
+
+.adventures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.adventure-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.adventure-card:hover {
+  transform: translateY(-4px);
+}
+
+.adventure-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.adventure-content {
+  padding: 24px;
+}
+
+.adventure-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--heading-teal);
+}
+
+.adventure-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.adventure-tag {
+  display: inline-block;
+  background: var(--accent-sage);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.at-the-cabin {
+  background-color: var(--white);
+  padding: 48px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.at-the-cabin h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--heading-teal);
+}
+
+.at-the-cabin > p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.cabin-activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cabin-activities span {
+  background: var(--bg-cream);
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+}
+
+/* ===== RSVP Section ===== */
+.rsvp {
+  background: linear-gradient(135deg, var(--heading-teal) 0%, #3d7a78 100%);
+  color: var(--white);
+  position: relative;
+}
+
+.rsvp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--topo-pattern);
+  background-size: 500px 500px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rsvp .container {
+  position: relative;
+  z-index: 1;
+}
+
+.rsvp h2 {
+  color: var(--white);
+}
+
+.rsvp .section-intro {
+  color: rgba(255,255,255,0.85);
+}
+
+.rsvp-table-wrapper {
+  max-width: 500px;
+  margin: 0 auto 32px;
+}
+
+.rsvp-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.rsvp-table th,
+.rsvp-table td {
+  padding: 16px 24px;
+  text-align: left;
+  color: var(--text-charcoal);
+}
+
+.rsvp-table th {
+  background: var(--bg-cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rsvp-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.rsvp-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status.confirmed {
+  background: var(--accent-sage);
+  color: var(--white);
+}
+
+.status.pending {
+  background: #f0e6d3;
+  color: #8a7355;
+}
+
+.rsvp-note {
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: var(--text-charcoal);
+  color: var(--bg-cream);
+  text-align: center;
+  padding: 64px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--topo-pattern);
+  background-size: 500px 500px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-logo,
+.footer p {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.footer p {
+  margin-bottom: 4px;
+}
+
+.footer-date {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    width: 220px;
+  }
+
+  .property-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img {
+    height: 200px;
+  }
+
+  .adventures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .at-the-cabin {
+    padding: 32px 24px;
+  }
+
+  .cabin-activities span {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .dates-badge {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 32px;
+  }
+
+  .detail-card {
+    padding: 24px 20px;
+  }
+
+  .feature {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .rsvp-table th,
+  .rsvp-table td {
+    padding: 12px 16px;
+  }
+}
