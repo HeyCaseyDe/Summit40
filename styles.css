@@ -100,10 +100,10 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80');
+  background-image: url('home-2.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
 .hero-overlay {
