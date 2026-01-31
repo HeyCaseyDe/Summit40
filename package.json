@@ -1,0 +1,7 @@
+{
+  "name": "summit-40-landing",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve -s . -p ${PORT:-3000}"
+  }
+}
